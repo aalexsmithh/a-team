@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace kinect_backend
 {
-    class Body
+    class BodyA
     {
-        public Body()
+        public BodyA()
         {
             joints = new List<Vector3>();
         }

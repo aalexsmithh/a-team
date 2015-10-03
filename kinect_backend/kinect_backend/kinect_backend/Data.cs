@@ -4,15 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Kinect;
+
 namespace kinect_backend
 {
-    class Test
+    class Data
     {
-        public static void Main()
-        {
-            Core c = new Core();
+        private KinectSensor sensor;
 
-            while (true) ;
+        Data()
+        {
+            sensor = KinectSensor.GetDefault();
+
+            sensor.Open();
         }
+
+
     }
 }

@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace kinect_backend
 {
-    class Test
+    class Angle
     {
-        public static void Main()
+        public Angle(int jointA, int jointB, int jointC)
         {
-            Core c = new Core();
 
-            while (true) ;
         }
     }
 }
