@@ -54,6 +54,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AudioFeedback.cs" />
     <Compile Include="Calc.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Form1.cs">

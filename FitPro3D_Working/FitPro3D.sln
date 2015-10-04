@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorBasics-WPF", "..\..\..
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91BF7F05-7EC7-4DFA-89A4-168D0AB01E4F}"
 	ProjectSection(SolutionItems) = preProject
+		AudioFeedback.cs = AudioFeedback.cs
 		ColorBasics-WPF.exe = ColorBasics-WPF.exe
 	EndProjectSection
 EndProject

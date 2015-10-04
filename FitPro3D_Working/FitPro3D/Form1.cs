@@ -35,6 +35,7 @@ namespace FitPro3D
         double calories;
         Image pic;
         Core body;
+        AudioFeedback input = new AudioFeedback();
 
         private KinectSensor sensor;
         
@@ -49,22 +50,13 @@ namespace FitPro3D
             p.StartInfo.FileName = "ColorBasics-WPF.exe";
             p.Start();
             Thread.Sleep(500); // Allow the process to open it's window
-            SetParent(p.MainWindowHandle, panel1.Handle);
-            //runPy("hello world");
-        }
-
-        //private void runPy(string ttsString)
-        //{
-        //    ProcessStartInfo pyt = new ProcessStartInfo("audio.py", ttsString);
-        //    pyt.UseShellExecute = false;              
-        //    pyt.CreateNoWindow = true;
-        //    pyt.RedirectStandardOutput = true;
-        //    Process.Start(pyt);
-        //}
+            SetParent(p.MainWindowHandle, panel1.Handle);            
+                       
+        }       
 
         private void startRec_Click(object sender, EventArgs e)
         {
-            if(recording ==false)
+            if (recording ==false)
             {                
                 recording = true;                
 
@@ -199,6 +191,8 @@ namespace FitPro3D
             
             if(recording == true)
             {
+                input.postData("Good Job on doing " + body.count[exerciseChosen] + " " + exerciseChosen + "!");
+                
                 recording = false;
                 pushRadio.Enabled = true;
                 sitRadio.Enabled = true;
@@ -215,8 +209,9 @@ namespace FitPro3D
                 body.Stop();
                 timer2.Stop();
                 checkCalories();
+                SoundPlayer playa = new SoundPlayer("./audio.wav");
+                playa.Play();
                 MessageBox.Show("You just burned " + (int)calories + " calorie(s)!");
-                
                 timerMin = 0;
                 timerSec = 0;
                 timerMill = 0;
