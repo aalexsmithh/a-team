@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows;
+using System.Media;
 
 using Microsoft.Kinect;
 
 namespace kinect_backend
 {
+    
     class Core
     {
+        SoundPlayer ding = new SoundPlayer("ding.wav");
         public Core()
         {
             InitExercises();
@@ -122,6 +125,7 @@ namespace kinect_backend
                         count[currentExercise]++;
                         started = false;
                         Console.WriteLine("Count: " + count[currentExercise]);
+                        ding.Play();
                     }
                     //Console.Clear();
                     //foreach (double a in angles)

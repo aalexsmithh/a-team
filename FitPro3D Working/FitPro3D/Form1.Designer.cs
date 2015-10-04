@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picRef = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.capReference = new System.Windows.Forms.Button();
             this.stopRec = new System.Windows.Forms.Button();
             this.startRec = new System.Windows.Forms.Button();
             this.debugLabel2 = new System.Windows.Forms.Label();
@@ -65,10 +65,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.curCountLabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.pushLabel = new System.Windows.Forms.Label();
-            this.SitLabel = new System.Windows.Forms.Label();
-            this.crunchLabel = new System.Windows.Forms.Label();
-            this.squatLabel = new System.Windows.Forms.Label();
+            this.jumpLabel = new System.Windows.Forms.Label();
+            this.sqLabel = new System.Windows.Forms.Label();
+            this.biLabel = new System.Windows.Forms.Label();
+            this.shLabel = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picRef)).BeginInit();
@@ -78,9 +78,10 @@
             // picRef
             // 
             this.picRef.BackColor = System.Drawing.Color.White;
-            this.picRef.Location = new System.Drawing.Point(12, 63);
+            this.picRef.Location = new System.Drawing.Point(16, 78);
+            this.picRef.Margin = new System.Windows.Forms.Padding(4);
             this.picRef.Name = "picRef";
-            this.picRef.Size = new System.Drawing.Size(512, 344);
+            this.picRef.Size = new System.Drawing.Size(683, 423);
             this.picRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRef.TabIndex = 0;
             this.picRef.TabStop = false;
@@ -90,7 +91,8 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Orange;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 447);
+            this.label1.Location = new System.Drawing.Point(13, 550);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 27);
             this.label1.TabIndex = 4;
@@ -101,27 +103,20 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Orange;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 525);
+            this.label2.Location = new System.Drawing.Point(13, 646);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 27);
             this.label2.TabIndex = 5;
             this.label2.Text = "Debug";
             // 
-            // capReference
-            // 
-            this.capReference.Location = new System.Drawing.Point(569, 453);
-            this.capReference.Name = "capReference";
-            this.capReference.Size = new System.Drawing.Size(162, 43);
-            this.capReference.TabIndex = 6;
-            this.capReference.Text = "Capture Reference";
-            this.capReference.UseVisualStyleBackColor = true;
-            // 
             // stopRec
             // 
             this.stopRec.BackColor = System.Drawing.Color.Red;
-            this.stopRec.Location = new System.Drawing.Point(569, 551);
+            this.stopRec.Location = new System.Drawing.Point(759, 665);
+            this.stopRec.Margin = new System.Windows.Forms.Padding(4);
             this.stopRec.Name = "stopRec";
-            this.stopRec.Size = new System.Drawing.Size(162, 43);
+            this.stopRec.Size = new System.Drawing.Size(216, 53);
             this.stopRec.TabIndex = 7;
             this.stopRec.Text = "Stop Recording";
             this.stopRec.UseVisualStyleBackColor = false;
@@ -130,9 +125,10 @@
             // startRec
             // 
             this.startRec.BackColor = System.Drawing.Color.LawnGreen;
-            this.startRec.Location = new System.Drawing.Point(569, 502);
+            this.startRec.Location = new System.Drawing.Point(759, 571);
+            this.startRec.Margin = new System.Windows.Forms.Padding(4);
             this.startRec.Name = "startRec";
-            this.startRec.Size = new System.Drawing.Size(162, 43);
+            this.startRec.Size = new System.Drawing.Size(216, 53);
             this.startRec.TabIndex = 8;
             this.startRec.Text = "Start Recording";
             this.startRec.UseVisualStyleBackColor = false;
@@ -142,27 +138,30 @@
             // 
             this.debugLabel2.BackColor = System.Drawing.Color.LightBlue;
             this.debugLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.debugLabel2.Location = new System.Drawing.Point(1073, 360);
+            this.debugLabel2.Location = new System.Drawing.Point(1425, 443);
+            this.debugLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.debugLabel2.Name = "debugLabel2";
-            this.debugLabel2.Size = new System.Drawing.Size(205, 243);
+            this.debugLabel2.Size = new System.Drawing.Size(258, 299);
             this.debugLabel2.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Orange;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(4, 438);
+            this.label4.Location = new System.Drawing.Point(5, 539);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(783, 168);
+            this.label4.Size = new System.Drawing.Size(1043, 206);
             this.label4.TabIndex = 10;
             // 
             // outLabel
             // 
             this.outLabel.BackColor = System.Drawing.Color.White;
             this.outLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outLabel.Location = new System.Drawing.Point(10, 474);
+            this.outLabel.Location = new System.Drawing.Point(13, 583);
+            this.outLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outLabel.Name = "outLabel";
-            this.outLabel.Size = new System.Drawing.Size(502, 33);
+            this.outLabel.Size = new System.Drawing.Size(669, 41);
             this.outLabel.TabIndex = 11;
             this.outLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -170,9 +169,10 @@
             // 
             this.debugLabel.BackColor = System.Drawing.Color.White;
             this.debugLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debugLabel.Location = new System.Drawing.Point(10, 552);
+            this.debugLabel.Location = new System.Drawing.Point(13, 679);
+            this.debugLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.debugLabel.Name = "debugLabel";
-            this.debugLabel.Size = new System.Drawing.Size(502, 33);
+            this.debugLabel.Size = new System.Drawing.Size(669, 41);
             this.debugLabel.TabIndex = 12;
             this.debugLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -181,7 +181,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Silver;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(214, 15);
+            this.label3.Location = new System.Drawing.Point(285, 18);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 31);
             this.label3.TabIndex = 13;
@@ -192,7 +193,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Silver;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(776, 15);
+            this.label5.Location = new System.Drawing.Point(1035, 18);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 31);
             this.label5.TabIndex = 14;
@@ -202,9 +204,10 @@
             // 
             this.label6.BackColor = System.Drawing.Color.Silver;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(9, 13);
+            this.label6.Location = new System.Drawing.Point(12, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1269, 34);
+            this.label6.Size = new System.Drawing.Size(1691, 41);
             this.label6.TabIndex = 15;
             // 
             // chooseExer
@@ -217,9 +220,11 @@
             this.chooseExer.Controls.Add(this.wallRadio);
             this.chooseExer.Controls.Add(this.sitRadio);
             this.chooseExer.Controls.Add(this.pushRadio);
-            this.chooseExer.Location = new System.Drawing.Point(806, 432);
+            this.chooseExer.Location = new System.Drawing.Point(1075, 532);
+            this.chooseExer.Margin = new System.Windows.Forms.Padding(4);
             this.chooseExer.Name = "chooseExer";
-            this.chooseExer.Size = new System.Drawing.Size(244, 171);
+            this.chooseExer.Padding = new System.Windows.Forms.Padding(4);
+            this.chooseExer.Size = new System.Drawing.Size(325, 210);
             this.chooseExer.TabIndex = 16;
             this.chooseExer.TabStop = false;
             this.chooseExer.Text = "Choose an exercise";
@@ -227,9 +232,10 @@
             // shoulderRadio
             // 
             this.shoulderRadio.AutoSize = true;
-            this.shoulderRadio.Location = new System.Drawing.Point(131, 134);
+            this.shoulderRadio.Location = new System.Drawing.Point(175, 165);
+            this.shoulderRadio.Margin = new System.Windows.Forms.Padding(4);
             this.shoulderRadio.Name = "shoulderRadio";
-            this.shoulderRadio.Size = new System.Drawing.Size(112, 19);
+            this.shoulderRadio.Size = new System.Drawing.Size(126, 21);
             this.shoulderRadio.TabIndex = 7;
             this.shoulderRadio.TabStop = true;
             this.shoulderRadio.Text = "Shoulder Press";
@@ -238,9 +244,10 @@
             // biRadio
             // 
             this.biRadio.AutoSize = true;
-            this.biRadio.Location = new System.Drawing.Point(131, 98);
+            this.biRadio.Location = new System.Drawing.Point(175, 121);
+            this.biRadio.Margin = new System.Windows.Forms.Padding(4);
             this.biRadio.Name = "biRadio";
-            this.biRadio.Size = new System.Drawing.Size(84, 19);
+            this.biRadio.Size = new System.Drawing.Size(93, 21);
             this.biRadio.TabIndex = 6;
             this.biRadio.TabStop = true;
             this.biRadio.Text = "Bicep Curl";
@@ -249,9 +256,10 @@
             // squatRadio
             // 
             this.squatRadio.AutoSize = true;
-            this.squatRadio.Location = new System.Drawing.Point(131, 64);
+            this.squatRadio.Location = new System.Drawing.Point(175, 79);
+            this.squatRadio.Margin = new System.Windows.Forms.Padding(4);
             this.squatRadio.Name = "squatRadio";
-            this.squatRadio.Size = new System.Drawing.Size(60, 19);
+            this.squatRadio.Size = new System.Drawing.Size(66, 21);
             this.squatRadio.TabIndex = 5;
             this.squatRadio.TabStop = true;
             this.squatRadio.Text = "Squat";
@@ -260,9 +268,10 @@
             // jacksRadio
             // 
             this.jacksRadio.AutoSize = true;
-            this.jacksRadio.Location = new System.Drawing.Point(131, 28);
+            this.jacksRadio.Location = new System.Drawing.Point(175, 34);
+            this.jacksRadio.Margin = new System.Windows.Forms.Padding(4);
             this.jacksRadio.Name = "jacksRadio";
-            this.jacksRadio.Size = new System.Drawing.Size(110, 19);
+            this.jacksRadio.Size = new System.Drawing.Size(122, 21);
             this.jacksRadio.TabIndex = 4;
             this.jacksRadio.TabStop = true;
             this.jacksRadio.Text = "Jumping Jacks";
@@ -271,9 +280,10 @@
             // plankRadio
             // 
             this.plankRadio.AutoSize = true;
-            this.plankRadio.Location = new System.Drawing.Point(15, 134);
+            this.plankRadio.Location = new System.Drawing.Point(20, 165);
+            this.plankRadio.Margin = new System.Windows.Forms.Padding(4);
             this.plankRadio.Name = "plankRadio";
-            this.plankRadio.Size = new System.Drawing.Size(59, 19);
+            this.plankRadio.Size = new System.Drawing.Size(64, 21);
             this.plankRadio.TabIndex = 3;
             this.plankRadio.TabStop = true;
             this.plankRadio.Text = "Plank";
@@ -282,9 +292,10 @@
             // wallRadio
             // 
             this.wallRadio.AutoSize = true;
-            this.wallRadio.Location = new System.Drawing.Point(15, 98);
+            this.wallRadio.Location = new System.Drawing.Point(20, 121);
+            this.wallRadio.Margin = new System.Windows.Forms.Padding(4);
             this.wallRadio.Name = "wallRadio";
-            this.wallRadio.Size = new System.Drawing.Size(70, 19);
+            this.wallRadio.Size = new System.Drawing.Size(77, 21);
             this.wallRadio.TabIndex = 2;
             this.wallRadio.TabStop = true;
             this.wallRadio.Text = "Wall-Sit";
@@ -293,9 +304,10 @@
             // sitRadio
             // 
             this.sitRadio.AutoSize = true;
-            this.sitRadio.Location = new System.Drawing.Point(15, 64);
+            this.sitRadio.Location = new System.Drawing.Point(20, 79);
+            this.sitRadio.Margin = new System.Windows.Forms.Padding(4);
             this.sitRadio.Name = "sitRadio";
-            this.sitRadio.Size = new System.Drawing.Size(62, 19);
+            this.sitRadio.Size = new System.Drawing.Size(68, 21);
             this.sitRadio.TabIndex = 1;
             this.sitRadio.TabStop = true;
             this.sitRadio.Text = "Sit-Up";
@@ -304,9 +316,10 @@
             // pushRadio
             // 
             this.pushRadio.AutoSize = true;
-            this.pushRadio.Location = new System.Drawing.Point(15, 28);
+            this.pushRadio.Location = new System.Drawing.Point(20, 34);
+            this.pushRadio.Margin = new System.Windows.Forms.Padding(4);
             this.pushRadio.Name = "pushRadio";
-            this.pushRadio.Size = new System.Drawing.Size(76, 19);
+            this.pushRadio.Size = new System.Drawing.Size(84, 21);
             this.pushRadio.TabIndex = 0;
             this.pushRadio.TabStop = true;
             this.pushRadio.Text = "Push-Up";
@@ -316,18 +329,20 @@
             // 
             this.label7.BackColor = System.Drawing.Color.DimGray;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(4, 54);
+            this.label7.Location = new System.Drawing.Point(5, 66);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(530, 362);
+            this.label7.Size = new System.Drawing.Size(706, 445);
             this.label7.TabIndex = 17;
             // 
             // successIndicator
             // 
             this.successIndicator.BackColor = System.Drawing.Color.ForestGreen;
             this.successIndicator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.successIndicator.Location = new System.Drawing.Point(537, 54);
+            this.successIndicator.Location = new System.Drawing.Point(716, 66);
+            this.successIndicator.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.successIndicator.Name = "successIndicator";
-            this.successIndicator.Size = new System.Drawing.Size(530, 362);
+            this.successIndicator.Size = new System.Drawing.Size(706, 445);
             this.successIndicator.TabIndex = 18;
             // 
             // label8
@@ -335,7 +350,8 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Silver;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1119, 14);
+            this.label8.Location = new System.Drawing.Point(1492, 17);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 31);
             this.label8.TabIndex = 19;
@@ -345,9 +361,10 @@
             // 
             this.label9.BackColor = System.Drawing.Color.Turquoise;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1137, 63);
+            this.label9.Location = new System.Drawing.Point(1516, 78);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 31);
+            this.label9.Size = new System.Drawing.Size(103, 38);
             this.label9.TabIndex = 20;
             this.label9.Text = "Timer";
             // 
@@ -355,9 +372,10 @@
             // 
             this.timerLabel.BackColor = System.Drawing.Color.Turquoise;
             this.timerLabel.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerLabel.Location = new System.Drawing.Point(1081, 103);
+            this.timerLabel.Location = new System.Drawing.Point(1441, 127);
+            this.timerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(191, 53);
+            this.timerLabel.Size = new System.Drawing.Size(237, 65);
             this.timerLabel.TabIndex = 21;
             this.timerLabel.Text = "00:00:00";
             this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -366,21 +384,23 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.LightBlue;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1074, 385);
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1426, 474);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 22);
+            this.label11.Size = new System.Drawing.Size(162, 27);
             this.label11.TabIndex = 23;
-            this.label11.Text = "Push-up count: ";
+            this.label11.Text = "Jumping Jacks: ";
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.Color.LightSalmon;
+            this.label12.BackColor = System.Drawing.Color.Yellow;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1073, 339);
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1425, 408);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(205, 22);
+            this.label12.Size = new System.Drawing.Size(258, 36);
             this.label12.TabIndex = 24;
             this.label12.Text = "Records";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,51 +409,56 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.LightBlue;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1074, 438);
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1426, 539);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(116, 22);
+            this.label13.Size = new System.Drawing.Size(143, 27);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Sit-up count: ";
+            this.label13.Text = "Squat Count: ";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.LightBlue;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1074, 502);
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1426, 618);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(124, 22);
+            this.label14.Size = new System.Drawing.Size(131, 27);
             this.label14.TabIndex = 26;
-            this.label14.Text = "Crunch count: ";
+            this.label14.Text = "Bicep Curls:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.LightBlue;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1074, 560);
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1426, 689);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 22);
+            this.label15.Size = new System.Drawing.Size(186, 27);
             this.label15.TabIndex = 27;
-            this.label15.Text = "Squat count: ";
+            this.label15.Text = "Shoulder Presses: ";
             // 
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.Turquoise;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(1072, 55);
+            this.label16.Location = new System.Drawing.Point(1429, 68);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(206, 120);
+            this.label16.Size = new System.Drawing.Size(254, 147);
             this.label16.TabIndex = 28;
             // 
             // label17
             // 
             this.label17.BackColor = System.Drawing.Color.Lime;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1104, 198);
+            this.label17.Location = new System.Drawing.Point(1463, 244);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(173, 31);
+            this.label17.Size = new System.Drawing.Size(196, 38);
             this.label17.TabIndex = 29;
             this.label17.Text = "Current Count";
             // 
@@ -441,9 +466,10 @@
             // 
             this.curCountLabel.BackColor = System.Drawing.Color.Lime;
             this.curCountLabel.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.curCountLabel.Location = new System.Drawing.Point(1137, 240);
+            this.curCountLabel.Location = new System.Drawing.Point(1512, 293);
+            this.curCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.curCountLabel.Name = "curCountLabel";
-            this.curCountLabel.Size = new System.Drawing.Size(77, 53);
+            this.curCountLabel.Size = new System.Drawing.Size(103, 65);
             this.curCountLabel.TabIndex = 30;
             this.curCountLabel.Text = "0";
             this.curCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -452,54 +478,59 @@
             // 
             this.label19.BackColor = System.Drawing.Color.Lime;
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(1072, 187);
+            this.label19.Location = new System.Drawing.Point(1429, 230);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(206, 120);
+            this.label19.Size = new System.Drawing.Size(254, 147);
             this.label19.TabIndex = 31;
             // 
-            // pushLabel
+            // jumpLabel
             // 
-            this.pushLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.pushLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pushLabel.Location = new System.Drawing.Point(1195, 379);
-            this.pushLabel.Name = "pushLabel";
-            this.pushLabel.Size = new System.Drawing.Size(77, 31);
-            this.pushLabel.TabIndex = 32;
-            this.pushLabel.Text = "0";
-            this.pushLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.jumpLabel.BackColor = System.Drawing.Color.LightBlue;
+            this.jumpLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jumpLabel.Location = new System.Drawing.Point(1616, 466);
+            this.jumpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.jumpLabel.Name = "jumpLabel";
+            this.jumpLabel.Size = new System.Drawing.Size(61, 38);
+            this.jumpLabel.TabIndex = 32;
+            this.jumpLabel.Text = "0";
+            this.jumpLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SitLabel
+            // sqLabel
             // 
-            this.SitLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.SitLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SitLabel.Location = new System.Drawing.Point(1195, 438);
-            this.SitLabel.Name = "SitLabel";
-            this.SitLabel.Size = new System.Drawing.Size(77, 31);
-            this.SitLabel.TabIndex = 33;
-            this.SitLabel.Text = "0";
-            this.SitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sqLabel.BackColor = System.Drawing.Color.LightBlue;
+            this.sqLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sqLabel.Location = new System.Drawing.Point(1616, 539);
+            this.sqLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sqLabel.Name = "sqLabel";
+            this.sqLabel.Size = new System.Drawing.Size(62, 38);
+            this.sqLabel.TabIndex = 33;
+            this.sqLabel.Text = "0";
+            this.sqLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // crunchLabel
+            // biLabel
             // 
-            this.crunchLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.crunchLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crunchLabel.Location = new System.Drawing.Point(1195, 496);
-            this.crunchLabel.Name = "crunchLabel";
-            this.crunchLabel.Size = new System.Drawing.Size(77, 31);
-            this.crunchLabel.TabIndex = 34;
-            this.crunchLabel.Text = "0";
-            this.crunchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.biLabel.BackColor = System.Drawing.Color.LightBlue;
+            this.biLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.biLabel.Location = new System.Drawing.Point(1618, 610);
+            this.biLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.biLabel.Name = "biLabel";
+            this.biLabel.Size = new System.Drawing.Size(60, 38);
+            this.biLabel.TabIndex = 34;
+            this.biLabel.Text = "0";
+            this.biLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // squatLabel
+            // shLabel
             // 
-            this.squatLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.squatLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.squatLabel.Location = new System.Drawing.Point(1195, 554);
-            this.squatLabel.Name = "squatLabel";
-            this.squatLabel.Size = new System.Drawing.Size(77, 31);
-            this.squatLabel.TabIndex = 35;
-            this.squatLabel.Text = "0";
-            this.squatLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shLabel.BackColor = System.Drawing.Color.LightBlue;
+            this.shLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shLabel.Location = new System.Drawing.Point(1620, 682);
+            this.shLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.shLabel.Name = "shLabel";
+            this.shLabel.Size = new System.Drawing.Size(58, 38);
+            this.shLabel.TabIndex = 35;
+            this.shLabel.Text = "0";
+            this.shLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer2
             // 
@@ -509,21 +540,23 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.Location = new System.Drawing.Point(546, 65);
+            this.panel1.Location = new System.Drawing.Point(728, 80);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 341);
+            this.panel1.Size = new System.Drawing.Size(683, 420);
             this.panel1.TabIndex = 36;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 615);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1687, 799);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.squatLabel);
-            this.Controls.Add(this.crunchLabel);
-            this.Controls.Add(this.SitLabel);
-            this.Controls.Add(this.pushLabel);
+            this.Controls.Add(this.shLabel);
+            this.Controls.Add(this.biLabel);
+            this.Controls.Add(this.sqLabel);
+            this.Controls.Add(this.jumpLabel);
             this.Controls.Add(this.curCountLabel);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
@@ -542,7 +575,6 @@
             this.Controls.Add(this.debugLabel2);
             this.Controls.Add(this.startRec);
             this.Controls.Add(this.stopRec);
-            this.Controls.Add(this.capReference);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picRef);
@@ -553,6 +585,8 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label19);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FitPro3D";
@@ -569,7 +603,6 @@
         private System.Windows.Forms.PictureBox picRef;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button capReference;
         private System.Windows.Forms.Button stopRec;
         private System.Windows.Forms.Button startRec;
         private System.Windows.Forms.Label debugLabel2;
@@ -600,10 +633,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label curCountLabel;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label pushLabel;
-        private System.Windows.Forms.Label SitLabel;
-        private System.Windows.Forms.Label crunchLabel;
-        private System.Windows.Forms.Label squatLabel;
+        private System.Windows.Forms.Label jumpLabel;
+        private System.Windows.Forms.Label sqLabel;
+        private System.Windows.Forms.Label biLabel;
+        private System.Windows.Forms.Label shLabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.RadioButton shoulderRadio;
