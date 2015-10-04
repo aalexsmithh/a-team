@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Kinect;
+
 namespace kinect_backend
 {
     class Vector3
@@ -50,6 +52,20 @@ namespace kinect_backend
             this.x = x;
             this.y = y;
             this.z = z;
+        }
+
+        public Vector3(Joint j)
+        {
+            x = j.Position.X;
+            y = j.Position.Y;
+            z = j.Position.Z;
+        }
+
+        public Vector3(JointType j1, JointType j2, JointType j3)
+        {
+            x = (double)(j1);
+            y = (double)(j2);
+            z = (double)(j3);
         }
 
         public double x, y, z;

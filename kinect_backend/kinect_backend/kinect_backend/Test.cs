@@ -8,11 +8,13 @@ namespace kinect_backend
 {
     class Test
     {
+        public static bool run = true;
+
         public static void Main()
         {
             Core c = new Core();
 
-            while (true) ;
+            while (run) ;
         }
     }
 }

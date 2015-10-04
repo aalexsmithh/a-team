@@ -15,7 +15,7 @@ namespace kinect_backend
             Vector3 v2;
 
             v1 = j0.Sub(j1);
-            v2 = j1.Sub(j2);
+            v2 = j2.Sub(j1);
 
             v1.Normalize();
             v2.Normalize();
