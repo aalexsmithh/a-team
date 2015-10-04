@@ -89,15 +89,16 @@ namespace FitPro3D
         {           
             if (recording == false)
             {
-                if (firstTime == true)
-                {
-                    input.speak(welcome);
-                }
+                
 
                 recording = true;
 
                 if (pushRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     exerciseChosen = "Push-Ups";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/pushup.gif");
@@ -106,6 +107,10 @@ namespace FitPro3D
                 }
                 else if (sitRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     exerciseChosen = "Sit-Ups";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/situp.gif");
@@ -113,6 +118,10 @@ namespace FitPro3D
                 }
                 else if (wallRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     exerciseChosen = "Wall-Sits";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/wallsit.jpg");
@@ -120,6 +129,10 @@ namespace FitPro3D
                 }
                 else if (plankRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     exerciseChosen = "Planking";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/plank.gif");
@@ -127,6 +140,10 @@ namespace FitPro3D
                 }
                 else if (jacksRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     track = true;
                     exerciseChosen = "jumpingjacks";
@@ -135,6 +152,10 @@ namespace FitPro3D
                 }
                 else if (squatRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     track = true;
                     exerciseChosen = "squat";
@@ -143,6 +164,10 @@ namespace FitPro3D
                 }
                 else if (biRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     track = true;
                     exerciseChosen = "bicep";
@@ -151,6 +176,10 @@ namespace FitPro3D
                 }
                 else if (shoulderRadio.Checked)
                 {
+                    if (firstTime == true)
+                    {
+                        input.speak(welcome);
+                    }
                     firstTime = false;
                     track = true;
                     exerciseChosen = "shoulderpress";
@@ -199,8 +228,7 @@ namespace FitPro3D
             
             if (track == true)
             {
-                curCountLabel.Text = "" + body.count[exerciseChosen];
-                
+                curCountLabel.Text = "" + body.count[exerciseChosen];                
             }
 
             minute = (int)timerMin / 600;
