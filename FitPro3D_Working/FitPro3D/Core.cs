@@ -14,6 +14,7 @@ namespace kinect_backend
     
     class Core
     {
+        public Boolean capturedBody = false;
         SoundPlayer ding = new SoundPlayer("ding.wav");
         public Core()
         {
@@ -78,6 +79,7 @@ namespace kinect_backend
                         {
                             if (body.IsTracked)
                             {
+                                capturedBody = true;
                                 b = body;
                                 break;
                             }

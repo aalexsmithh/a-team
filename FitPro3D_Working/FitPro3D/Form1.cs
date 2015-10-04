@@ -21,7 +21,7 @@ namespace FitPro3D
 {
     public partial class Form1 : Form
     {
-        String exerciseChosen;        
+        String exerciseChosen;
         double timerMin = 0.00;
         double timerSec = 0.00;
         double timerMill = 0.00;
@@ -36,9 +36,10 @@ namespace FitPro3D
         Image pic;
         Core body;
         AudioFeedback input = new AudioFeedback();
-
+        Boolean firstTime = true;
+        String welcome = "OK! Let's get started. Please enter the starting position, and I'll make sure I can see you";
         private KinectSensor sensor;
-        
+
 
         public Form1()
         {
@@ -49,64 +50,108 @@ namespace FitPro3D
             p.StartInfo.WorkingDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             p.StartInfo.FileName = "ColorBasics-WPF.exe";
             p.Start();
-            Thread.Sleep(500); // Allow the process to open it's window
-            SetParent(p.MainWindowHandle, panel1.Handle);            
-                       
-        }       
+            Thread.Sleep(600); // Allow the process to open it's window
+            SetParent(p.MainWindowHandle, panel1.Handle);
+            input.speak("Welcome to Fit Pro 3D. Please choose an exercise below, and click start to begin.");
+        }
+
+
+        private void exit_speech(String exercise, int count)
+        {
+            if (count < 2)
+            {
+                if (count == 0)
+                {
+                    input.speak("Haha, try again!");
+                }
+                else
+                {
+                    input.speak("Good job on that " + count + " " + exercise + "!");
+                }
+            }
+            else
+            {
+                input.speak("Good job on those " + count + " " + exercise + "!");
+            }
+        }
+
+        //OnFirstExerciseChosen
+
+
+        //EntersBasePosition
+        //private void enterPos()
+        //{
+        //    input.speak("Great, I can see you! Now you can start the exercise. After each repetition, I'll ring a bell to register the rep.");
+        //}
+
 
         private void startRec_Click(object sender, EventArgs e)
-        {
-            if (recording ==false)
-            {                
-                recording = true;                
+        {           
+            if (recording == false)
+            {
+                if (firstTime == true)
+                {
+                    input.speak(welcome);
+                }
+
+                recording = true;
 
                 if (pushRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     exerciseChosen = "Push-Ups";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/pushup.gif");
                     startProgram();
+
                 }
                 else if (sitRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     exerciseChosen = "Sit-Ups";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/situp.gif");
                     startProgram();
                 }
                 else if (wallRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     exerciseChosen = "Wall-Sits";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/wallsit.jpg");
                     startProgram();
                 }
                 else if (plankRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     exerciseChosen = "Planking";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/plank.gif");
                     startProgram();
                 }
                 else if (jacksRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     track = true;
                     exerciseChosen = "jumpingjacks";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/jumpingjack.gif");
                     startProgram();
                 }
                 else if (squatRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     track = true;
                     exerciseChosen = "squat";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/squats.gif");
                     startProgram();
                 }
                 else if (biRadio.Checked)
-                {                   
+                {
+                    firstTime = false;
                     track = true;
                     exerciseChosen = "bicep";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/curls.gif");
                     startProgram();
                 }
                 else if (shoulderRadio.Checked)
-                {                    
+                {
+                    firstTime = false;
                     track = true;
                     exerciseChosen = "shoulderpress";
                     pic = Image.FromFile("C:/Users/Robert/Desktop/FitPro3D/press.gif");
@@ -118,8 +163,9 @@ namespace FitPro3D
                     MessageBox.Show("Please select an exercise!");
                 }
                 
-            }            
-        }    
+
+            }
+        }
         private void startProgram()
         {
             timer2.Start();
@@ -140,7 +186,7 @@ namespace FitPro3D
                 body.SetExercise(exerciseChosen);
                 body.Start();
             }
-        }    
+        }
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
 
@@ -150,11 +196,13 @@ namespace FitPro3D
             timerMin++;
             timerSec++;
             timerMill++;
-            if(track == true)
-            {
-                curCountLabel.Text = "" + body.count[exerciseChosen];                
-            }
             
+            if (track == true)
+            {
+                curCountLabel.Text = "" + body.count[exerciseChosen];
+                
+            }
+
             minute = (int)timerMin / 600;
 
             if ((int)timerSec % 600 == 0)
@@ -184,15 +232,14 @@ namespace FitPro3D
                     timerLabel.Text = "0" + minute.ToString() + ":" + second.ToString() + ":" + millisecond.ToString();
                 }
             }
-        }           
+        }
 
         private void stopRec_Click(object sender, EventArgs e)
         {
-            
-            if(recording == true)
+
+            if (recording == true)
             {
-                input.postData("Good Job on doing " + body.count[exerciseChosen] + " " + exerciseChosen + "!");
-                
+                exit_speech(exerciseChosen, body.count[exerciseChosen]);
                 recording = false;
                 pushRadio.Enabled = true;
                 sitRadio.Enabled = true;
@@ -209,13 +256,12 @@ namespace FitPro3D
                 body.Stop();
                 timer2.Stop();
                 checkCalories();
-                SoundPlayer playa = new SoundPlayer("./audio.wav");
-                playa.Play();
+                
                 MessageBox.Show("You just burned " + (int)calories + " calorie(s)!");
                 timerMin = 0;
                 timerSec = 0;
                 timerMill = 0;
-            }            
+            }
         }
 
         private void recordKeeping()
