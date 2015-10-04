@@ -1,7 +1,8 @@
-# wear-hacks
+# FitPro3D
 Run this program by executing /a-team/executalbe/FitPro3D.exe
 
-#devpost documentation
+Wearhacks Questions 
+--------------------
 Submission name format: B5_a-team
 
 Video/proof of concept: done
@@ -15,7 +16,7 @@ Whether or not you are implementing Analytics in your hack: No
 Whether or not your hack is relevant to HealthCare: Yes
 
 Documentation
-===========
+-------------
 This is a personal assistant for your workouts. It can track you while you do a number of exercises, to ensure you have proper form and to keep track of your reps. 
 
 Currently the app has support for four workouts (shoulder press, bicep curls, jumping jacks, squat), although the code is scalable to track any sort of exercises.
